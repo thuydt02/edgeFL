@@ -1,0 +1,7 @@
+#BSUB -J efl_L20E2rnd20
+#BSUB -q normal
+#BSUB -e %J.err
+#BSUB -o %J.out
+
+conda activate FL_en 
+python3 ./src_efl/NoPySyft/main_efl.py --num-edge-servers 20 --lr 0.15 --lr-decay 0.99 --edge-update 20 --global-update 2 --z-file "1z_rnd_num_client300.part20"

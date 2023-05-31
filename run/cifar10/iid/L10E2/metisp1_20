@@ -1,0 +1,5 @@
+#BSUB -J efl_iidL10E2_metisp1_20
+#BSUB -e %J.err
+#BSUB -o %J.out
+ 
+singularity exec --nv pytorch_gpu.simg python3 ./src_efl/NoPySyft_cifar10/main_eflq.py --num-edge-servers 20 --mode 'iid' --lr 0.15 --lr-decay 0.99 --edge-update 10 --global-update 2 --z-file "g_nw_d_minkowski_p1.0_CNN2_G100_partition_iid_nclient300.npy.part.20"

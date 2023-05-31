@@ -1,0 +1,5 @@
+#BSUB -J efl_L20E57rnd30
+#BSUB -e %J.err
+#BSUB -o %J.out
+ 
+singularity exec --nv pytorch_gpu.simg python3 ./src_efl/NoPySyft/main_eflq.py --num-edge-servers 30 --lr 0.15 --lr-decay 0.99 --edge-update 20 --global-update 5 --z-file "7z_rnd_num_client300.part30"

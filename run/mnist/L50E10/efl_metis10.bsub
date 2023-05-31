@@ -1,0 +1,8 @@
+#BSUB -J efl_metis10L50E10
+#BSUB -q normal
+#BSUB -e %J.err
+#BSUB -o %J.out
+
+conda activate FL_en 
+python3 ./src_efl/NoPySyft/main_efl.py --num-edge-servers 10 --edge-update 50 --global-update 10 --z-file "g_nw_d_euclidean_MLP2_G10_partition_noniid90_nclient300.npy.part.10"
+

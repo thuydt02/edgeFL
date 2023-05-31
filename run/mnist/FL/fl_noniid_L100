@@ -1,0 +1,5 @@
+#BSUB -J fl_noniidL100
+#BSUB -e %J.err
+#BSUB -o %J.out
+ 
+singularity exec --nv pytorch_gpu.simg python3 ./src_efl/NoPySyft_mnist/main_fl.py --num-clients 300 --lr 0.01 --lr-decay 1 --client-epochs 100 --server-epochs 50 --partition-data-file "partition_noniid90_nclient300.npy"

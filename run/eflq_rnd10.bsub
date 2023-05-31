@@ -1,0 +1,8 @@
+#BSUB -J eflq_rnd10
+#BSUB -q normal
+#BSUB -e %J.err
+#BSUB -o %J.out
+
+conda activate FL_en 
+python3 ./src_efl/NoPySyft/main_eflq.py --num-edge-servers 10 --edge-update 10 --global-update 2 --z-file "1z_rnd_num_client300.part10"
+
